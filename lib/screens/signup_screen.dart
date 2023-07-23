@@ -160,11 +160,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     ElevatedButton(
                         onPressed: () async {
-                          setState(() {
-                            isLoading = true;
-                          });
+
                           bool? isValid = _formKey.currentState?.validate();
                           if (isValid == true) {
+                            setState(() {
+                              isLoading = true;
+                            });
                             bool isSuccessful = await AuthServices.register(
                                 _emailController.text,
                                 _passwordController.text,
