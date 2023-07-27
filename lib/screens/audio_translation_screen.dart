@@ -10,7 +10,7 @@ import 'package:vision_ai/services/translation_services.dart';
 import 'package:vision_ai/utils/custom_colors.dart';
 
 class AudioTranslationScreen extends StatefulWidget {
-  AudioTranslationScreen({super.key});
+  const AudioTranslationScreen({super.key});
 
   static String routeName = "audio_translation_screen";
 

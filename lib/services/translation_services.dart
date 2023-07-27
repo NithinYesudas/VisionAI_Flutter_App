@@ -56,9 +56,7 @@ class TranslationServices {
       final tempPath = tempDir.path;
       final filePath = '$tempPath/video.mp4';
       final file = await File(filePath).writeAsBytes(res);
-
       return file.path;
-
     } else {
       print("failed");
       return null;

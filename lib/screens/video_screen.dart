@@ -57,33 +57,35 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
         future: _initializeVideoPlayerFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return Column(
-              children: [
+            return SingleChildScrollView(
+              child: Column(
+                children: [
 
-                AspectRatio(
-                  aspectRatio: _controller.value.aspectRatio,
-                  child: Chewie(
-                     controller: chewieController,
+                  AspectRatio(
+                    aspectRatio: _controller.value.aspectRatio,
+                    child: Chewie(
+                       controller: chewieController,
+                    ),
                   ),
-                ),
-                IconButton(
-                    onPressed: () {
-                      setState(() {
-                        if (_controller.value.isPlaying) {
-                          _controller.pause();
-                        } else {
-                          _controller.play();
-                        }
-                      });
-                    },
-                    icon: Icon(
-                      _controller.value.isPlaying
-                          ? Icons.pause_circle
-                          : Icons.play_circle,
-                      color: CustomColors.primaryColor,
-                      size: mediaQuery.width*.15,
-                    ))
-              ],
+                  IconButton(
+                      onPressed: () {
+                        setState(() {
+                          if (_controller.value.isPlaying) {
+                            _controller.pause();
+                          } else {
+                            _controller.play();
+                          }
+                        });
+                      },
+                      icon: Icon(
+                        _controller.value.isPlaying
+                            ? Icons.pause_circle
+                            : Icons.play_circle,
+                        color: CustomColors.primaryColor,
+                        size: mediaQuery.width*.15,
+                      ))
+                ],
+              ),
             );
           } else {
             return const Center(

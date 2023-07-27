@@ -212,9 +212,7 @@ class _ScriptGenerationScreenState extends State<ScriptGenerationScreen>
                     ElevatedButton(
                       onPressed: () async {
                         if (_titleController.text.isEmpty || _titleController.text.length < 5) {
-                          Provider.of<AuthProvider>(context,listen: false)
-                              .logout();
-                          return;
+
                           ScaffoldMessenger.of(context)
                               .showSnackBar(const SnackBar(
                             content: Text("Please Enter a valid Title"),
